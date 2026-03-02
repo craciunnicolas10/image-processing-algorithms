@@ -190,13 +190,17 @@
             </MenuItem>
 
             <MenuItem Header="Pointwise operations"
-                      Background="{Binding Path=Theme.MenuItemBackgroundColor}"
-                      Foreground="{Binding Path=Theme.MenuItemForegroundColor}">
-                <MenuItem Header="BrightessContrast" 
-	                      Foreground="#1E1E1E"
-	                      Command="{Binding Path=MenuCommands.BCImageCommand}"
-	                      CommandParameter="{Binding ElementName=processedImageCanvas}"/>
+          Background="{Binding Path=Theme.MenuItemBackgroundColor}"
+          Foreground="{Binding Path=Theme.MenuItemForegroundColor}">
+                <MenuItem Header="BrightessContrast"
+              Foreground="#1E1E1E"
+              Command="{Binding Path=MenuCommands.BCImageCommand}"
+              CommandParameter="{Binding ElementName=processedImageCanvas}"/>
 
+                <MenuItem Header="Constant Stretching"
+              Foreground="#1E1E1E"
+              Command="{Binding Path=MenuCommands.ConstantStretchingCommand}"
+              CommandParameter="{Binding ElementName=processedImageCanvas}"/>
             </MenuItem>
 
             <MenuItem Header="Thresholding"
