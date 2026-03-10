@@ -3,7 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nicol\\Downloads\\Framework\\Algorithms\\Sections\\PointwiseOperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{46916620-F543-4A92-93C0-F8FBEFECFBD6}|Framework\\Framework.csproj|c:\\users\\nicol\\desktop\\pid-laboratoare\\framework\\viewmodel\\commands\\menucommands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46916620-F543-4A92-93C0-F8FBEFECFBD6}|Framework\\Framework.csproj|solutionrelative:framework\\viewmodel\\commands\\menucommands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2204949-5A56-49A4-9EF9-E4A177560169}|Algorithms\\Algorithms.csproj|c:\\users\\nicol\\desktop\\pid-laboratoare\\algorithms\\sections\\pointwiseoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2204949-5A56-49A4-9EF9-E4A177560169}|Algorithms\\Algorithms.csproj|solutionrelative:algorithms\\sections\\pointwiseoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46916620-F543-4A92-93C0-F8FBEFECFBD6}|Framework\\Framework.csproj|C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\framework\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46916620-F543-4A92-93C0-F8FBEFECFBD6}|Framework\\Framework.csproj|solutionrelative:framework\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,14 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PointwiseOperations.cs",
-              "DocumentMoniker": "C:\\Users\\nicol\\Downloads\\Framework\\Algorithms\\Sections\\PointwiseOperations.cs",
-              "RelativeDocumentMoniker": "..\\..\\Downloads\\Framework\\Algorithms\\Sections\\PointwiseOperations.cs",
-              "ToolTip": "C:\\Users\\nicol\\Downloads\\Framework\\Algorithms\\Sections\\PointwiseOperations.cs",
-              "RelativeToolTip": "..\\..\\Downloads\\Framework\\Algorithms\\Sections\\PointwiseOperations.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAUwDwAAAAMAAAAAAAAAA==",
+              "Title": "MenuCommands.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Framework\\ViewModel\\Commands\\MenuCommands.cs",
+              "RelativeDocumentMoniker": "Framework\\ViewModel\\Commands\\MenuCommands.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Framework\\ViewModel\\Commands\\MenuCommands.cs",
+              "RelativeToolTip": "Framework\\ViewModel\\Commands\\MenuCommands.cs",
+              "ViewState": "AgIAALACAAAAAAAAAAAkwMICAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T21:00:05.844Z",
+              "WhenOpened": "2026-03-02T17:35:03.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PointwiseOperations.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Algorithms\\Sections\\PointwiseOperations.cs",
+              "RelativeDocumentMoniker": "Algorithms\\Sections\\PointwiseOperations.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Algorithms\\Sections\\PointwiseOperations.cs",
+              "RelativeToolTip": "Algorithms\\Sections\\PointwiseOperations.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAYwJgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T17:28:27.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Framework\\View\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Framework\\View\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Framework\\View\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Framework\\View\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAuwE0AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T13:31:38.144Z",
               "EditorCaption": ""
             }
           ]
