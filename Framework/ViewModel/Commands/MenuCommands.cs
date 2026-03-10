@@ -607,6 +607,8 @@ namespace Framework.ViewModel
         #endregion
 
         #region Pointwise operations
+
+
         #region BrightnessContrast image
         private ICommand _bcImageCommand;
         public ICommand BCImageCommand
@@ -628,30 +630,84 @@ namespace Framework.ViewModel
             }
 
             ClearProcessedCanvas(parameter as Canvas);
+
             List<string> labels = new List<string>()
-            {
-                "a:",
-                "b"
-            };
-            DialogWindow window=new DialogWindow(_mainVM, labels);
+    {
+        "a:",
+        "b:"
+    };
+
+            DialogWindow window = new DialogWindow(_mainVM, labels);
             window.ShowDialog();
 
             List<double> values = window.GetValues();
+
+            if (values == null || values.Count < 2)
+                return;
+
             double a = values[0];
             double b = values[1];
+
             if (a < 0) a = 1;
+
             if (GrayInitialImage != null)
             {
-                GrayProcessedImage = PointwiseOperations.BrightnessContrast(GrayInitialImage, a,b);
+                GrayProcessedImage =
+                    PointwiseOperations.BrightnessContrast(GrayInitialImage, a, b);
+
                 ProcessedImage = Convert(GrayProcessedImage);
             }
             else if (ColorInitialImage != null)
             {
-                ColorProcessedImage = PointwiseOperations.BrightnessContrast(ColorProcessedImage, a,b);
+
+                ColorProcessedImage =
+                    PointwiseOperations.BrightnessContrast(ColorInitialImage, a, b);
+
                 ProcessedImage = Convert(ColorProcessedImage);
             }
         }
         #endregion
+
+
+        #region Constant Stretching image
+        private ICommand _constantStretchingCommand;
+        public ICommand ConstantStretchingCommand
+        {
+            get
+            {
+                if (_constantStretchingCommand == null)
+                    _constantStretchingCommand = new RelayCommand(ConstantStretchingImage);
+                return _constantStretchingCommand;
+            }
+        }
+
+        private void ConstantStretchingImage(object parameter)
+        {
+            if (InitialImage == null)
+            {
+                MessageBox.Show("Please add an image!");
+                return;
+            }
+
+            ClearProcessedCanvas(parameter as Canvas);
+
+            if (GrayInitialImage != null)
+            {
+                GrayProcessedImage =
+                    PointwiseOperations.ConstantStretching(GrayInitialImage);
+
+                ProcessedImage = Convert(GrayProcessedImage);
+            }
+            else if (ColorInitialImage != null)
+            {
+                ColorProcessedImage =
+                    PointwiseOperations.ConstantStretching(ColorInitialImage);
+
+                ProcessedImage = Convert(ColorProcessedImage);
+            }
+        }
+        #endregion
+
         #endregion
 
         #region Thresholding
