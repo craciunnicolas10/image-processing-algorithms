@@ -123,16 +123,11 @@
                 <MenuItem Header="Theme"
                           Foreground="#1E1E1E"
                           x:Name="themeMenu">
-                    <MenuItem Header="Lime Green"
-                              Click="ThemeModeSelector"/>
-                    <MenuItem Header="Forest Green"
-                              Click="ThemeModeSelector"/>
-                    <MenuItem Header="Pale Pink"
-                              Click="ThemeModeSelector"/>
-                    <MenuItem Header="Lavender Violet"
-                              Click="ThemeModeSelector"/>
-                    <MenuItem Header="Cobalt Blue"
-                              Click="ThemeModeSelector"/>
+                    <MenuItem Header="Lime Green"      Click="ThemeModeSelector"/>
+                    <MenuItem Header="Forest Green"    Click="ThemeModeSelector"/>
+                    <MenuItem Header="Pale Pink"       Click="ThemeModeSelector"/>
+                    <MenuItem Header="Lavender Violet" Click="ThemeModeSelector"/>
+                    <MenuItem Header="Cobalt Blue"     Click="ThemeModeSelector"/>
                 </MenuItem>
                 <Separator/>
                 <MenuItem Header="Magnifier"
@@ -165,75 +160,91 @@
                           Foreground="#1E1E1E"
                           Command="{Binding Path=MenuCommands.ConvertImageToGrayscaleCommand}"
                           CommandParameter="{Binding ElementName=processedImageCanvas}"/>
-
                 <MenuItem Header="Binary" 
                           Foreground="#1E1E1E"
                           Command="{Binding Path=MenuCommands.BinaryImageCommand}"
                           CommandParameter="{Binding ElementName=processedImageCanvas}"/>
-
                 <MenuItem Header="Mirroring"
                           Foreground="#1E1E1E"
                           Command="{Binding Path=MenuCommands.MirrorImageCommand}"
                           CommandParameter="{Binding ElementName=processedImageCanvas}"/>
-
-                <MenuItem Header="Rotate image">
-                    <MenuItem Header="Clockwise" 
-	                          Command="{Binding MenuCommands.RotateClockwiseCommand}" 
-	                          CommandParameter="{Binding ElementName=ProcessedCanvas}"/>
-                    <MenuItem Header="Anti-clockwise" 
-	                          Command="{Binding MenuCommands.RotateAntiClockwiseCommand}" 
-	                          CommandParameter="{Binding ElementName=ProcessedCanvas}"/>
+                <MenuItem Header="Rotate image"
+                          Foreground="#1E1E1E">
+                    <MenuItem Header="Clockwise"
+                              Foreground="#1E1E1E"
+                              Command="{Binding Path=MenuCommands.RotateClockwiseCommand}"
+                              CommandParameter="{Binding ElementName=processedImageCanvas}"/>
+                    <MenuItem Header="Anti-clockwise"
+                              Foreground="#1E1E1E"
+                              Command="{Binding Path=MenuCommands.RotateAntiClockwiseCommand}"
+                              CommandParameter="{Binding ElementName=processedImageCanvas}"/>
                 </MenuItem>
+                <MenuItem Header="Crop image"
+                          Foreground="#1E1E1E"
+                          Command="{Binding Path=MenuCommands.CropImageCommand}"
+                          CommandParameter="{Binding ElementName=processedImageCanvas}"/>
                 <Separator/>
-
-
             </MenuItem>
 
             <MenuItem Header="Pointwise operations"
                       Background="{Binding Path=Theme.MenuItemBackgroundColor}"
                       Foreground="{Binding Path=Theme.MenuItemForegroundColor}">
-                <MenuItem Header="BrightessContrast" 
-	                      Foreground="#1E1E1E"
-	                      Command="{Binding Path=MenuCommands.BCImageCommand}"
-	                      CommandParameter="{Binding ElementName=processedImageCanvas}"/>
-
+                <MenuItem Header="BrightnessContrast"
+                          Foreground="#1E1E1E"
+                          Command="{Binding Path=MenuCommands.BCImageCommand}"
+                          CommandParameter="{Binding ElementName=processedImageCanvas}"/>
+                <MenuItem Header="Gamma operator"
+          Foreground="#1E1E1E"
+          Command="{Binding Path=MenuCommands.GammaImageCommand}"
+          CommandParameter="{Binding ElementName=processedImageCanvas}"/>
             </MenuItem>
 
             <MenuItem Header="Thresholding"
                       Background="{Binding Path=Theme.MenuItemBackgroundColor}"
                       Foreground="{Binding Path=Theme.MenuItemForegroundColor}">
-
+                <MenuItem Header="Otsu Thresholding"
+                          Foreground="#1E1E1E"
+                          Command="{Binding Path=MenuCommands.OtsuThresholdingCommand}"
+                          CommandParameter="{Binding ElementName=processedImageCanvas}"/>
             </MenuItem>
 
             <MenuItem Header="Filters" 
-                      Background="{Binding Path=Theme.MenuItemBackgroundColor}"
-                      Foreground="{Binding Path=Theme.MenuItemForegroundColor}">
+          Background="{Binding Path=Theme.MenuItemBackgroundColor}"
+          Foreground="{Binding Path=Theme.MenuItemForegroundColor}">
+                <MenuItem Header="Custom filters"
+          Foreground="#1E1E1E">
+                    <MenuItem Header="Filtrul meu"
+              Foreground="#1E1E1E"
+              Command="{Binding Path=MenuCommands.CustomFilterCommand}"
+              CommandParameter="{Binding ElementName=processedImageCanvas}"/>
+                    <MenuItem Header="Separable filter"
+              Foreground="#1E1E1E"
+              Command="{Binding Path=MenuCommands.SeparableFilterCommand}"
+              CommandParameter="{Binding ElementName=processedImageCanvas}"/>
+                </MenuItem>
                 <MenuItem Header="Low-pass"
-                          Foreground="#1E1E1E">
-
-                </MenuItem>
+              Foreground="#1E1E1E"
+              Command="{Binding MenuCommands.CustomFilterCommand}"
+              CommandParameter="{Binding ElementName=processedImageCanvas}"/>
                 <MenuItem Header="High-pass"
-                          Foreground="#1E1E1E">
-
-                </MenuItem>
+              Foreground="#1E1E1E"
+              Command="{Binding MenuCommands.CustomFilter2Command}"
+              CommandParameter="{Binding ElementName=processedImageCanvas}"/>
             </MenuItem>
 
             <MenuItem Header="Morphological operations"
                       Background="{Binding Path=Theme.MenuItemBackgroundColor}"
                       Foreground="{Binding Path=Theme.MenuItemForegroundColor}">
-
             </MenuItem>
 
             <MenuItem Header="Geometric transformations"
                       Background="{Binding Path=Theme.MenuItemBackgroundColor}"
                       Foreground="{Binding Path=Theme.MenuItemForegroundColor}">
-
             </MenuItem>
 
             <MenuItem Header="Segmentation"
                       Background="{Binding Path=Theme.MenuItemBackgroundColor}"
                       Foreground="{Binding Path=Theme.MenuItemForegroundColor}">
-
             </MenuItem>
 
             <MenuItem Header="Use processed image as initial image" 
@@ -250,28 +261,19 @@
             </MenuItem>
         </Menu>
 
-        <TextBlock Grid.Row="1"
-                   Grid.Column="0"
+        <TextBlock Grid.Row="1" Grid.Column="0"
                    Text="Initial Image"
                    Foreground="{Binding Path=Theme.TextForeground}"
-                   FontSize="15"
-                   TextAlignment="Center"
-                   Height="20"
-                   Width="120"/>
-        <TextBlock Grid.Row="1"
-                   Grid.Column="1"
+                   FontSize="15" TextAlignment="Center"
+                   Height="20" Width="120"/>
+        <TextBlock Grid.Row="1" Grid.Column="1"
                    Text="Processed Image"
                    Foreground="{Binding Path=Theme.TextForeground}"
-                   FontSize="15"
-                   TextAlignment="Center"
-                   Height="20"
-                   Width="120"/>
+                   FontSize="15" TextAlignment="Center"
+                   Height="20" Width="120"/>
 
-        <Label Grid.Column="0"
-               Grid.Row="2"
-               Width="auto"
-               Height="auto"
-               Margin="10,0,10,0"
+        <Label Grid.Column="0" Grid.Row="2"
+               Width="auto" Height="auto" Margin="10,0,10,0"
                Background="{Binding Path=Theme.CanvasBackgroundColor}"
                BorderBrush="{Binding Path=Theme.CanvasBorderBrush}"
                BorderThickness="5"
@@ -282,8 +284,7 @@
                           VerticalScrollBarVisibility="Auto" 
                           ScrollChanged="ScrollChanged">
                 <Canvas x:Name="initialImageCanvas"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
                         Width="{Binding Path=InitialCanvasWidth}"
                         Height="{Binding Path=InitialCanvasHeight}"
                         MouseLeftButtonDown="CanvasMouseLeftButtonDown">
@@ -302,11 +303,8 @@
             </ScrollViewer>
         </Label>
 
-        <Label Grid.Column="1"
-               Grid.Row="2"
-               Width="auto"
-               Height="auto"
-               Margin="10,0,10,0"
+        <Label Grid.Column="1" Grid.Row="2"
+               Width="auto" Height="auto" Margin="10,0,10,0"
                Background="{Binding Path=Theme.CanvasBackgroundColor}"
                BorderBrush="{Binding Path=Theme.CanvasBorderBrush}"
                BorderThickness="5"
@@ -317,8 +315,7 @@
                           VerticalScrollBarVisibility="Auto" 
                           ScrollChanged="ScrollChanged">
                 <Canvas x:Name="processedImageCanvas"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
                         Width="{Binding Path=ProcessedCanvasWidth}"
                         Height="{Binding Path=ProcessedCanvasHeight}"
                         MouseLeftButtonDown="CanvasMouseLeftButtonDown">
@@ -337,10 +334,7 @@
             </ScrollViewer>
         </Label>
 
-        <Grid Grid.Row="3"
-                    Grid.ColumnSpan="2"
-                    Height="40"
-                    Margin="10,0,10,0">
+        <Grid Grid.Row="3" Grid.ColumnSpan="2" Height="40" Margin="10,0,10,0">
             <Button Content="Reset"
                     Command="{Binding Path=ResetZoomCommand}"
                     Foreground="{Binding Path=Theme.ButtonForegroundColor}"
@@ -348,44 +342,30 @@
                     BorderBrush="{Binding Path=Theme.ButtonBorderBrush}"
                     BorderThickness="2"
                     HorizontalAlignment="Left"
-                    Height="35"
-                    Width="80"/>
+                    Height="35" Width="80"/>
             <Slider x:Name="sliderZoom"
                     Orientation="Horizontal"
                     Foreground="{Binding Path=Theme.TextForeground}"
                     Value="{Binding Path=ScaleValue}"
-                    Minimum="0.1"
-                    Maximum="10.00"
-                    SmallChange="0.05"
-                    LargeChange="0.1"
-                    TickFrequency="0.1"
-                    TickPlacement="BottomRight"
+                    Minimum="0.1" Maximum="10.00"
+                    SmallChange="0.05" LargeChange="0.1"
+                    TickFrequency="0.1" TickPlacement="BottomRight"
                     Cursor="Hand"
                     ValueChanged="SliderZoom_ValueChanged"
-                    Margin="100,0,100,0"
-                    Height="30"
-                    Width="auto"/>
+                    Margin="100,0,100,0" Height="30" Width="auto"/>
             <TextBlock Text="{Binding Path=Value, ElementName=sliderZoom, StringFormat=N2}" 
                        Foreground="{Binding Path=Theme.TextForeground}"
-                       FontSize="15"
-                       TextAlignment="Center"
+                       FontSize="15" TextAlignment="Center"
                        HorizontalAlignment="Right"
-                       Height="30"
-                       Width="50"
-                       Margin="0,0,40,5"/>
+                       Height="30" Width="50" Margin="0,0,40,5"/>
             <TextBlock Text="x"
                        Foreground="{Binding Path=Theme.TextForeground}"
-                       FontSize="15"
-                       TextAlignment="Center"
+                       FontSize="15" TextAlignment="Center"
                        HorizontalAlignment="Right"
-                       Height="30"
-                       Width="30"
-                       Margin="0,0,20,5"/>
+                       Height="30" Width="30" Margin="0,0,20,5"/>
         </Grid>
 
-        <Grid Grid.Column="0"
-              Grid.Row="4"
-              Grid.ColumnSpan="2">
+        <Grid Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
@@ -400,44 +380,30 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="1" 
-                       Grid.Row="1"
+            <TextBlock Grid.Column="1" Grid.Row="1"
                        Foreground="{Binding Path=Theme.TextForeground}"
                        Text="{Binding Path=XPos}"
-                       FontSize="15" 
-                       HorizontalAlignment="Center"/>
-            <TextBlock Grid.Column="2" 
-                       Grid.Row="1"
+                       FontSize="15" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Grid.Row="1"
                        Foreground="{Binding Path=Theme.TextForeground}"
                        Text="{Binding Path=YPos}"
-                       FontSize="15" 
-                       HorizontalAlignment="Center"/>
-
-            <TextBlock Grid.Column="5"
-                       Grid.Row="1"
-                       Foreground="{Binding Path=Theme.TextForeground}"
-                       Text="{Binding Path=GrayValue}"
-                       FontSize="15"
-                       HorizontalAlignment="Center"/>
-
-            <TextBlock Grid.Column="4"
-                       Grid.Row="1"
+                       FontSize="15" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Column="4" Grid.Row="1"
                        Foreground="{Binding Path=Theme.TextForeground}"
                        Text="{Binding Path=RedValue}"
-                       FontSize="15"
-                       HorizontalAlignment="Center"/>
-            <TextBlock Grid.Column="5"
-                       Grid.Row="1"
+                       FontSize="15" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Column="5" Grid.Row="1"
+                       Foreground="{Binding Path=Theme.TextForeground}"
+                       Text="{Binding Path=GrayValue}"
+                       FontSize="15" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Column="5" Grid.Row="1"
                        Foreground="{Binding Path=Theme.TextForeground}"
                        Text="{Binding Path=GreenValue}"
-                       FontSize="15"
-                       HorizontalAlignment="Center"/>
-            <TextBlock Grid.Column="6"
-                       Grid.Row="1"
+                       FontSize="15" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Column="6" Grid.Row="1"
                        Foreground="{Binding Path=Theme.TextForeground}"
                        Text="{Binding Path=BlueValue}"
-                       FontSize="15"
-                       HorizontalAlignment="Center"/>
+                       FontSize="15" HorizontalAlignment="Center"/>
         </Grid>
     </Grid>
 </Window>

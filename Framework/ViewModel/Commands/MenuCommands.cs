@@ -286,6 +286,193 @@ namespace Framework.ViewModel
         #endregion
 
         #region Tools
+        #region Mirror image
+        private ICommand _mirrorImageCommand;
+        public ICommand MirrorImageCommand
+        {
+            get
+            {
+                if (_mirrorImageCommand == null)
+                    _mirrorImageCommand = new RelayCommand(MirrorImage);
+                return _mirrorImageCommand;
+            }
+        }
+
+        private void MirrorImage(object parameter)
+        {
+            if (InitialImage == null)
+            {
+                MessageBox.Show("Please add an image!");
+                return;
+            }
+
+            ClearProcessedCanvas(parameter as Canvas);
+
+            if (GrayInitialImage != null)
+            {
+                GrayProcessedImage = Tools.Mirror(GrayInitialImage);
+                ProcessedImage = Convert(GrayProcessedImage);
+            }
+            else if (ColorInitialImage != null)
+            {
+                ColorProcessedImage = Tools.Mirror(ColorInitialImage);
+                ProcessedImage = Convert(ColorProcessedImage);
+            }
+        }
+        #endregion
+
+        #region Rotate Clockwise
+        private ICommand _rotateClockwiseCommand;
+        public ICommand RotateClockwiseCommand
+        {
+            get
+            {
+                if (_rotateClockwiseCommand == null)
+                    _rotateClockwiseCommand = new RelayCommand(RotateClockwise);
+                return _rotateClockwiseCommand;
+            }
+        }
+
+        private void RotateClockwise(object parameter)
+        {
+            if (InitialImage == null)
+            {
+                MessageBox.Show("Please add an image!");
+                return;
+            }
+
+            ClearProcessedCanvas(parameter as Canvas);
+
+            if (GrayInitialImage != null)
+            {
+                GrayProcessedImage = Tools.RotateClockwise(GrayInitialImage);
+                ProcessedImage = Convert(GrayProcessedImage);
+            }
+            else if (ColorInitialImage != null)
+            {
+                ColorProcessedImage = Tools.RotateClockwise(ColorInitialImage);
+                ProcessedImage = Convert(ColorProcessedImage);
+            }
+        }
+        #endregion
+
+        #region Rotate Anti-Clockwise
+        private ICommand _rotateAntiClockwiseCommand;
+        public ICommand RotateAntiClockwiseCommand
+        {
+            get
+            {
+                if (_rotateAntiClockwiseCommand == null)
+                    _rotateAntiClockwiseCommand = new RelayCommand(RotateAntiClockwise);
+                return _rotateAntiClockwiseCommand;
+            }
+        }
+
+        private void RotateAntiClockwise(object parameter)
+        {
+            if (InitialImage == null)
+            {
+                MessageBox.Show("Please add an image!");
+                return;
+            }
+
+            ClearProcessedCanvas(parameter as Canvas);
+
+            if (GrayInitialImage != null)
+            {
+                GrayProcessedImage = Tools.RotateAntiClockwise(GrayInitialImage);
+                ProcessedImage = Convert(GrayProcessedImage);
+            }
+            else if (ColorInitialImage != null)
+            {
+                ColorProcessedImage = Tools.RotateAntiClockwise(ColorInitialImage);
+                ProcessedImage = Convert(ColorProcessedImage);
+            }
+        }
+        #region Crop image
+        private ICommand _cropImageCommand;
+        public ICommand CropImageCommand
+        {
+            get
+            {
+                if (_cropImageCommand == null)
+                    _cropImageCommand = new RelayCommand(CropImage);
+                return _cropImageCommand;
+            }
+        }
+
+        private void CropImage(object parameter)
+        {
+            if (InitialImage == null)
+            {
+                MessageBox.Show("Please add an image!");
+                return;
+            }
+
+            if (MouseClickCollection.Count < 2)
+            {
+                MessageBox.Show("Please select an area first (2 clicks: top-left and bottom-right)!");
+                return;
+            }
+
+            double minX = double.MaxValue, minY = double.MaxValue;
+            double maxX = double.MinValue, maxY = double.MinValue;
+            foreach (var point in MouseClickCollection)
+            {
+                if (point.X < minX) minX = point.X;
+                if (point.Y < minY) minY = point.Y;
+                if (point.X > maxX) maxX = point.X;
+                if (point.Y > maxY) maxY = point.Y;
+            }
+
+            int x1 = (int)minX, y1 = (int)minY;
+            int x2 = (int)maxX, y2 = (int)maxY;
+
+            if (GrayInitialImage != null)
+            {
+                x1 = System.Math.Max(0, x1);
+                y1 = System.Math.Max(0, y1);
+                x2 = System.Math.Min(GrayInitialImage.Width, x2);
+                y2 = System.Math.Min(GrayInitialImage.Height, y2);
+            }
+            else if (ColorInitialImage != null)
+            {
+                x1 = System.Math.Max(0, x1);
+                y1 = System.Math.Max(0, y1);
+                x2 = System.Math.Min(ColorInitialImage.Width, x2);
+                y2 = System.Math.Min(ColorInitialImage.Height, y2);
+            }
+
+            if (x2 <= x1 || y2 <= y1)
+            {
+                MessageBox.Show("Invalid selection area!");
+                return;
+            }
+
+            ClearProcessedCanvas(parameter as Canvas);
+
+            if (GrayInitialImage != null)
+            {
+                GrayProcessedImage = Tools.Crop(GrayInitialImage, x1, y1, x2, y2);
+                ProcessedImage = Convert(GrayProcessedImage);
+
+                var (mean, stdDev) = Tools.ComputeMeanStdDev(GrayProcessedImage);
+                MessageBox.Show($"Mean: {mean:F2}\nStd Dev: {stdDev:F2}",
+                                "Crop Statistics");
+            }
+            else if (ColorInitialImage != null)
+            {
+                ColorProcessedImage = Tools.Crop(ColorInitialImage, x1, y1, x2, y2);
+                ProcessedImage = Convert(ColorProcessedImage);
+
+                var grayCrop = Tools.Convert(ColorProcessedImage);
+                var (mean, stdDev) = Tools.ComputeMeanStdDev(grayCrop);
+                MessageBox.Show($"Mean: {mean:F2}\nStd Dev: {stdDev:F2}",
+                                "Crop Statistics");
+            }
+        }
+        #endregion
+        #endregion
 
         #region Magnifier
         private ICommand _magnifierCommand;
@@ -655,9 +842,220 @@ namespace Framework.ViewModel
         #endregion
 
         #region Thresholding
+
+        #region Otsu Thresholding
+        private ICommand _otsuThresholdingCommand;
+        public ICommand OtsuThresholdingCommand
+        {
+            get
+            {
+                if (_otsuThresholdingCommand == null)
+                    _otsuThresholdingCommand = new RelayCommand(OtsuThresholdingImage);
+                return _otsuThresholdingCommand;
+            }
+        }
+
+        private void OtsuThresholdingImage(object parameter)
+        {
+            if (InitialImage == null)
+            {
+                MessageBox.Show("Please add an image!");
+                return;
+            }
+
+            ClearProcessedCanvas(parameter as Canvas);
+
+            if (GrayInitialImage != null)
+            {
+                GrayProcessedImage = GrayProcessedImage = Thresholding.OtsuThresholding(GrayInitialImage);
+                ProcessedImage = Convert(GrayProcessedImage);
+            }
+            else if (ColorInitialImage != null)
+            {
+                GrayProcessedImage = Thresholding.OtsuThresholding(ColorInitialImage);
+                ProcessedImage = Convert(GrayProcessedImage);
+            }
+        }
+        #endregion
+        #region Gamma operator
+        private ICommand _gammaImageCommand;
+        public ICommand GammaImageCommand
+        {
+            get
+            {
+                if (_gammaImageCommand == null)
+                    _gammaImageCommand = new RelayCommand(GammaImage);
+                return _gammaImageCommand;
+            }
+        }
+
+        private void GammaImage(object parameter)
+        {
+            if (InitialImage == null)
+            {
+                MessageBox.Show("Please add an image!");
+                return;
+            }
+
+            ClearProcessedCanvas(parameter as Canvas);
+
+            List<string> labels = new List<string>() { "gamma:" };
+            DialogWindow window = new DialogWindow(_mainVM, labels);
+            window.ShowDialog();
+
+            List<double> values = window.GetValues();
+            double gamma = values[0];
+
+            if (gamma <= 0)
+            {
+                MessageBox.Show("Gamma must be strictly positive!");
+                return;
+            }
+
+            if (GrayInitialImage != null)
+            {
+                GrayProcessedImage = PointwiseOperations.GammaOperator(GrayInitialImage, gamma);
+                ProcessedImage = Convert(GrayProcessedImage);
+            }
+            else if (ColorInitialImage != null)
+            {
+                ColorProcessedImage = PointwiseOperations.GammaOperator(ColorInitialImage, gamma);
+                ProcessedImage = Convert(ColorProcessedImage);
+            }
+        }
+        #endregion
         #endregion
 
         #region Filters
+
+        #region Filters
+
+        #region Custom filter 1 - Low pass
+        private ICommand _customFilterCommand;
+        public ICommand CustomFilterCommand
+        {
+            get
+            {
+                if (_customFilterCommand == null)
+                    _customFilterCommand = new RelayCommand(CustomFilterImage);
+                return _customFilterCommand;
+            }
+        }
+
+        private void CustomFilterImage(object parameter)
+        {
+            if (InitialImage == null)
+            {
+                MessageBox.Show("Please add an image!");
+                return;
+            }
+
+            ClearProcessedCanvas(parameter as Canvas);
+
+            double[,] kernel = new double[3, 3]
+            {
+        { 0.1, 0.1, 0.1 },
+        { 0.1, 0.2, 0.1 },
+        { 0.1, 0.1, 0.1 }
+            };
+
+            if (GrayInitialImage != null)
+            {
+                GrayProcessedImage = Filters.ApplyFilter(GrayInitialImage, kernel);
+                ProcessedImage = Convert(GrayProcessedImage);
+            }
+            else if (ColorInitialImage != null)
+            {
+                ColorProcessedImage = Filters.ApplyFilter(ColorInitialImage, kernel);
+                ProcessedImage = Convert(ColorProcessedImage);
+            }
+        }
+        #endregion
+
+        #region Custom filter 2 - High pass
+        private ICommand _customFilter2Command;
+        public ICommand CustomFilter2Command
+        {
+            get
+            {
+                if (_customFilter2Command == null)
+                    _customFilter2Command = new RelayCommand(CustomFilter2Image);
+                return _customFilter2Command;
+            }
+        }
+
+        private void CustomFilter2Image(object parameter)
+        {
+            if (InitialImage == null)
+            {
+                MessageBox.Show("Please add an image!");
+                return;
+            }
+
+            ClearProcessedCanvas(parameter as Canvas);
+
+            double[,] kernel = new double[3, 3]
+            {
+        {  0, -1,  0 },
+        { -1,  5, -1 },
+        {  0, -1,  0 }
+            };
+
+            if (GrayInitialImage != null)
+            {
+                GrayProcessedImage = Filters.ApplyFilter(GrayInitialImage, kernel);
+                ProcessedImage = Convert(GrayProcessedImage);
+            }
+            else if (ColorInitialImage != null)
+            {
+                ColorProcessedImage = Filters.ApplyFilter(ColorInitialImage, kernel);
+                ProcessedImage = Convert(ColorProcessedImage);
+            }
+        }
+        #endregion
+
+        #region Separable filter
+        private ICommand _separableFilterCommand;
+        public ICommand SeparableFilterCommand
+        {
+            get
+            {
+                if (_separableFilterCommand == null)
+                    _separableFilterCommand = new RelayCommand(SeparableFilterImage);
+                return _separableFilterCommand;
+            }
+        }
+
+        private void SeparableFilterImage(object parameter)
+        {
+            if (InitialImage == null)
+            {
+                MessageBox.Show("Please add an image!");
+                return;
+            }
+
+            ClearProcessedCanvas(parameter as Canvas);
+
+            double[,] horizontal = new double[1, 3] { { 0.25, 0.5, 0.25 } };
+            double[,] vertical = new double[3, 1] { { 0.25 }, { 0.5 }, { 0.25 } };
+
+            if (GrayInitialImage != null)
+            {
+                var temp = Filters.ApplyFilter(GrayInitialImage, horizontal);
+                GrayProcessedImage = Filters.ApplyFilter(temp, vertical);
+                ProcessedImage = Convert(GrayProcessedImage);
+            }
+            else if (ColorInitialImage != null)
+            {
+                var temp = Filters.ApplyFilter(ColorInitialImage, horizontal);
+                ColorProcessedImage = Filters.ApplyFilter(temp, vertical);
+                ProcessedImage = Convert(ColorProcessedImage);
+            }
+        }
+        #endregion
+
+        #endregion
+
         #endregion
 
         #region Morphological operations
