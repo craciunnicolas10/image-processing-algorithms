@@ -81,5 +81,33 @@ namespace Algorithms.Sections
             return result;
         }
         #endregion
+
+        #region Gamma
+        public static byte[] ComputeGammaLUT(double gamma)
+        {
+            byte[] lut = new byte[256];
+            double c = 255.0 / System.Math.Pow(255.0, gamma);
+            for (int i = 0; i < 256; i++)
+            {
+                double value = c * System.Math.Pow(i, gamma) + 0.5;
+                if (value < 0) value = 0;
+                if (value > 255) value = 255;
+                lut[i] = (byte)value;
+            }
+            return lut;
+        }
+
+        public static Image<Gray, byte> GammaOperator(Image<Gray, byte> inputImage, double gamma)
+        {
+            byte[] lut = ComputeGammaLUT(gamma);
+            return ApplyLUT(inputImage, lut);
+        }
+
+        public static Image<Bgr, byte> GammaOperator(Image<Bgr, byte> inputImage, double gamma)
+        {
+            byte[] lut = ComputeGammaLUT(gamma);
+            return ApplyLUTColor(inputImage, lut);
+        }
+        #endregion
     }
 }

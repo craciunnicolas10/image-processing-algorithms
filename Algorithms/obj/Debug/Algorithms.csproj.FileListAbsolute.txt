@@ -12,3 +12,17 @@ C:\Users\nicol\Downloads\Framework\Algorithms\obj\Debug\Algorithms.csproj.CoreCo
 C:\Users\nicol\Downloads\Framework\Algorithms\obj\Debug\Algorithms.csproj.Up2Date
 C:\Users\nicol\Downloads\Framework\Algorithms\obj\Debug\Algorithms.dll
 C:\Users\nicol\Downloads\Framework\Algorithms\obj\Debug\Algorithms.pdb
+C:\Users\nicol\Desktop\PID-Laboratoare\Algorithms\obj\Debug\Algorithms.csproj.AssemblyReference.cache
+C:\Users\nicol\Desktop\PID-Laboratoare\Algorithms\obj\Debug\Algorithms.csproj.CoreCompileInputs.cache
+C:\Users\nicol\Desktop\PID-Laboratoare\Algorithms\bin\Debug\Algorithms.dll.config
+C:\Users\nicol\Desktop\PID-Laboratoare\Algorithms\bin\Debug\Algorithms.dll
+C:\Users\nicol\Desktop\PID-Laboratoare\Algorithms\bin\Debug\Algorithms.pdb
+C:\Users\nicol\Desktop\PID-Laboratoare\Algorithms\bin\Debug\Emgu.CV.UI.GL.dll
+C:\Users\nicol\Desktop\PID-Laboratoare\Algorithms\bin\Debug\Emgu.CV.UI.dll
+C:\Users\nicol\Desktop\PID-Laboratoare\Algorithms\bin\Debug\Emgu.CV.World.dll
+C:\Users\nicol\Desktop\PID-Laboratoare\Algorithms\bin\Debug\OpenTK.dll
+C:\Users\nicol\Desktop\PID-Laboratoare\Algorithms\bin\Debug\OpenTK.GLControl.dll
+C:\Users\nicol\Desktop\PID-Laboratoare\Algorithms\bin\Debug\ZedGraph.dll
+C:\Users\nicol\Desktop\PID-Laboratoare\Algorithms\obj\Debug\Algorithms.csproj.Up2Date
+C:\Users\nicol\Desktop\PID-Laboratoare\Algorithms\obj\Debug\Algorithms.dll
+C:\Users\nicol\Desktop\PID-Laboratoare\Algorithms\obj\Debug\Algorithms.pdb

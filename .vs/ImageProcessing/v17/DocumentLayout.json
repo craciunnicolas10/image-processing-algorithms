@@ -3,7 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nicol\\Downloads\\Framework\\Algorithms\\Sections\\PointwiseOperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{46916620-F543-4A92-93C0-F8FBEFECFBD6}|Framework\\Framework.csproj|C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\framework\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{46916620-F543-4A92-93C0-F8FBEFECFBD6}|Framework\\Framework.csproj|solutionrelative:framework\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46916620-F543-4A92-93C0-F8FBEFECFBD6}|Framework\\Framework.csproj|C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\framework\\viewmodel\\commands\\menucommands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46916620-F543-4A92-93C0-F8FBEFECFBD6}|Framework\\Framework.csproj|solutionrelative:framework\\viewmodel\\commands\\menucommands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2204949-5A56-49A4-9EF9-E4A177560169}|Algorithms\\Algorithms.csproj|c:\\users\\nicol\\desktop\\pid-laboratoare\\algorithms\\sections\\filters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2204949-5A56-49A4-9EF9-E4A177560169}|Algorithms\\Algorithms.csproj|solutionrelative:algorithms\\sections\\filters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2204949-5A56-49A4-9EF9-E4A177560169}|Algorithms\\Algorithms.csproj|C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\algorithms\\sections\\thresholding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2204949-5A56-49A4-9EF9-E4A177560169}|Algorithms\\Algorithms.csproj|solutionrelative:algorithms\\sections\\thresholding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2204949-5A56-49A4-9EF9-E4A177560169}|Algorithms\\Algorithms.csproj|C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\algorithms\\sections\\pointwiseoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2204949-5A56-49A4-9EF9-E4A177560169}|Algorithms\\Algorithms.csproj|solutionrelative:algorithms\\sections\\pointwiseoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2204949-5A56-49A4-9EF9-E4A177560169}|Algorithms\\Algorithms.csproj|C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\algorithms\\utilities\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2204949-5A56-49A4-9EF9-E4A177560169}|Algorithms\\Algorithms.csproj|solutionrelative:algorithms\\utilities\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46916620-F543-4A92-93C0-F8FBEFECFBD6}|Framework\\Framework.csproj|c:\\users\\nicol\\desktop\\pid-laboratoare\\framework\\converters\\arrraymultivalueconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46916620-F543-4A92-93C0-F8FBEFECFBD6}|Framework\\Framework.csproj|solutionrelative:framework\\converters\\arrraymultivalueconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2204949-5A56-49A4-9EF9-E4A177560169}|Algorithms\\Algorithms.csproj|c:\\users\\nicol\\desktop\\pid-laboratoare\\algorithms\\tools\\tools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2204949-5A56-49A4-9EF9-E4A177560169}|Algorithms\\Algorithms.csproj|solutionrelative:algorithms\\tools\\tools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46916620-F543-4A92-93C0-F8FBEFECFBD6}|Framework\\Framework.csproj|C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\framework\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46916620-F543-4A92-93C0-F8FBEFECFBD6}|Framework\\Framework.csproj|solutionrelative:framework\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46916620-F543-4A92-93C0-F8FBEFECFBD6}|Framework\\Framework.csproj|c:\\users\\nicol\\desktop\\pid-laboratoare\\framework\\utilities\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46916620-F543-4A92-93C0-F8FBEFECFBD6}|Framework\\Framework.csproj|solutionrelative:framework\\utilities\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,19 +50,156 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Filters.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Algorithms\\Sections\\Filters.cs",
+              "RelativeDocumentMoniker": "Algorithms\\Sections\\Filters.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Algorithms\\Sections\\Filters.cs",
+              "RelativeToolTip": "Algorithms\\Sections\\Filters.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T12:20:23.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Thresholding.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Algorithms\\Sections\\Thresholding.cs",
+              "RelativeDocumentMoniker": "Algorithms\\Sections\\Thresholding.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Algorithms\\Sections\\Thresholding.cs",
+              "RelativeToolTip": "Algorithms\\Sections\\Thresholding.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAiwFsAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T12:29:16.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MenuCommands.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Framework\\ViewModel\\Commands\\MenuCommands.cs",
+              "RelativeDocumentMoniker": "Framework\\ViewModel\\Commands\\MenuCommands.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Framework\\ViewModel\\Commands\\MenuCommands.cs",
+              "RelativeToolTip": "Framework\\ViewModel\\Commands\\MenuCommands.cs",
+              "ViewState": "AgIAAAgEAAAAAAAAAAAAAB0EAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T17:35:03.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PointwiseOperations.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Algorithms\\Sections\\PointwiseOperations.cs",
+              "RelativeDocumentMoniker": "Algorithms\\Sections\\PointwiseOperations.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Algorithms\\Sections\\PointwiseOperations.cs",
+              "RelativeToolTip": "Algorithms\\Sections\\PointwiseOperations.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAswFcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T17:28:27.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Utils.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Algorithms\\Utilities\\Utils.cs",
+              "RelativeDocumentMoniker": "Algorithms\\Utilities\\Utils.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Algorithms\\Utilities\\Utils.cs",
+              "RelativeToolTip": "Algorithms\\Utilities\\Utils.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAiwB8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T12:44:47.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ArrrayMultiValueConverter.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Framework\\Converters\\ArrrayMultiValueConverter.cs",
+              "RelativeDocumentMoniker": "Framework\\Converters\\ArrrayMultiValueConverter.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Framework\\Converters\\ArrrayMultiValueConverter.cs",
+              "RelativeToolTip": "Framework\\Converters\\ArrrayMultiValueConverter.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAIwBIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T09:50:19.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DataProvider.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Framework\\Utilities\\DataProvider.cs",
+              "RelativeDocumentMoniker": "Framework\\Utilities\\DataProvider.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Framework\\Utilities\\DataProvider.cs",
+              "RelativeToolTip": "Framework\\Utilities\\DataProvider.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAgwBoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T09:30:55.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Framework\\View\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Framework\\View\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Framework\\View\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Framework\\View\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T13:31:38.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Tools.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Algorithms\\Tools\\Tools.cs",
+              "RelativeDocumentMoniker": "Algorithms\\Tools\\Tools.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Algorithms\\Tools\\Tools.cs",
+              "RelativeToolTip": "Algorithms\\Tools\\Tools.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAiwH0AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T09:23:50.505Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "4e4680ce-bbb2-46bd-b4df-eefefd51adba",
+        "Display": 0,
+        "X": 32,
+        "Y": 73,
+        "Width": 1167,
+        "Height": 562,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PointwiseOperations.cs",
-              "DocumentMoniker": "C:\\Users\\nicol\\Downloads\\Framework\\Algorithms\\Sections\\PointwiseOperations.cs",
-              "RelativeDocumentMoniker": "..\\..\\Downloads\\Framework\\Algorithms\\Sections\\PointwiseOperations.cs",
-              "ToolTip": "C:\\Users\\nicol\\Downloads\\Framework\\Algorithms\\Sections\\PointwiseOperations.cs",
-              "RelativeToolTip": "..\\..\\Downloads\\Framework\\Algorithms\\Sections\\PointwiseOperations.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAUwDwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T21:00:05.844Z",
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Framework\\View\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Framework\\View\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\PID-Laboratoare\\Framework\\View\\MainWindow.xaml",
+              "RelativeToolTip": "Framework\\View\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-10T12:21:18.706Z",
               "EditorCaption": ""
             }
           ]
