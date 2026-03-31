@@ -234,6 +234,10 @@
                           Foreground="#1E1E1E"
                           Command="{Binding MenuCommands.CustomFilter2Command}"
                           CommandParameter="{Binding ElementName=processedImageCanvas}"/>
+                <MenuItem Header="Sobel edge detection"
+                          Foreground="#1E1E1E"
+                          Command="{Binding MenuCommands.SobelEdgeDetectionCommand}"
+                          CommandParameter="{Binding ElementName=processedImageCanvas}"/>
             </MenuItem>
 
             <MenuItem Header="Morphological operations"
