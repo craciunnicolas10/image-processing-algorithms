@@ -1088,7 +1088,59 @@ namespace Framework.ViewModel
             }
         }
         #endregion
+        #region Sobel Edge Detection
+        private ICommand _sobelEdgeDetectionCommand;
+        public ICommand SobelEdgeDetectionCommand
+        {
+            get
+            {
+                if (_sobelEdgeDetectionCommand == null)
+                    _sobelEdgeDetectionCommand = new RelayCommand(SobelEdgeDetectionImage);
+                return _sobelEdgeDetectionCommand;
+            }
+        }
 
+        private void SobelEdgeDetectionImage(object parameter)
+        {
+            if (InitialImage == null)
+            {
+                MessageBox.Show("Please add an image!");
+                return;
+            }
+
+            ClearProcessedCanvas(parameter as Canvas);
+
+            List<string> labels = new List<string>
+            {
+                "Threshold (T):",
+                "Angle (Theta):",
+                "Deviation (dev):"
+            };
+
+            DialogWindow diag = new DialogWindow(_mainVM, labels);
+            diag.ShowDialog();
+
+            List<double> values = diag.GetValues();
+
+            if (values == null || values.Count < 3) return;
+
+            double t = values[0];
+            double theta = values[1];
+            double dev = values[2];
+
+            Image<Gray, byte> grayToProcess = GrayInitialImage;
+            if (grayToProcess == null && ColorInitialImage != null)
+            {
+                grayToProcess = Tools.Convert(ColorInitialImage);
+            }
+
+            if (grayToProcess != null)
+            {
+                GrayProcessedImage = Filters.SobelEdgeDetection(grayToProcess, t, theta, dev);
+                ProcessedImage = Convert(GrayProcessedImage);
+            }
+        }
+        #endregion
         #endregion
 
         #endregion

@@ -114,5 +114,76 @@ namespace Algorithms.Sections
 
             return result;
         }
+        public static Image<Gray, byte> SobelEdgeDetection(Image<Gray, byte> inputImage, double threshold, double targetAngleDeg, double deviationDeg)
+        {
+            int width = inputImage.Width;
+            int height = inputImage.Height;
+            Image<Gray, byte> result = new Image<Gray, byte>(width, height);
+
+            int[,] Sx = new int[,] {
+                { -1,  0,  1 },
+                { -2,  0,  2 },
+                { -1,  0,  1 }
+            };
+
+            int[,] Sy = new int[,] {
+                { -1, -2, -1 },
+                {  0,  0,  0 },
+                {  1,  2,  1 }
+            };
+
+            for (int y = 1; y < height - 1; y++)
+            {
+                for (int x = 1; x < width - 1; x++)
+                {
+                    double fx = 0;
+                    double fy = 0;
+
+                    for (int i = -1; i <= 1; i++)
+                    {
+                        for (int j = -1; j <= 1; j++)
+                        {
+                            int pixelValue = inputImage.Data[y + i, x + j, 0];
+                            fx += pixelValue * Sx[i + 1, j + 1];
+                            fy += pixelValue * Sy[i + 1, j + 1];
+                        }
+                    }
+
+                    double n_grad = Math.Sqrt(fx * fx + fy * fy);
+
+                    if (n_grad > threshold)
+                    {
+                        double thetaGradRad = Math.Atan2(fy, fx);
+                        double thetaGradDeg = thetaGradRad * 180.0 / Math.PI;
+
+                        double thetaEdgeDeg = thetaGradDeg + 90.0;
+
+                        thetaEdgeDeg = thetaEdgeDeg % 180.0;
+                        if (thetaEdgeDeg < 0) thetaEdgeDeg += 180.0;
+
+                        double targetNorm = targetAngleDeg % 180.0;
+                        if (targetNorm < 0) targetNorm += 180.0;
+
+                        double diff = Math.Abs(thetaEdgeDeg - targetNorm);
+                        if (diff > 90.0) diff = 180.0 - diff;
+
+                        if (diff <= deviationDeg)
+                        {
+                            result.Data[y, x, 0] = 255;
+                        }
+                        else
+                        {
+                            result.Data[y, x, 0] = 0;
+                        }
+                    }
+                    else
+                    {
+                        result.Data[y, x, 0] = 0;
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }
