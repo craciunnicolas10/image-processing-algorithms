@@ -1146,6 +1146,42 @@ namespace Framework.ViewModel
         #endregion
 
         #region Morphological operations
+        private ICommand _connectedComponentsCommand;
+        public ICommand ConnectedComponentsCommand
+        {
+            get
+            {
+                if (_connectedComponentsCommand == null)
+                {
+                    _connectedComponentsCommand = new RelayCommand(ConnectedComponentsImage);
+                }
+                return _connectedComponentsCommand;
+            }
+        }
+
+        private void ConnectedComponentsImage(object parameter)
+        {
+            if (InitialImage == null)
+            {
+                MessageBox.Show("Please add an image!");
+                return;
+            }
+
+            ClearProcessedCanvas(parameter as Canvas);
+
+            Image<Gray, byte> grayToProcess = GrayInitialImage;
+
+            if (grayToProcess == null && ColorInitialImage != null)
+            {
+                grayToProcess = Tools.Convert(ColorInitialImage);
+            }
+
+            if (grayToProcess != null)
+            {
+                Image<Bgr, byte> coloredResult = Algorithms.Sections.MorphologicalOperations.ConnectedComponents(grayToProcess);
+                ProcessedImage = Convert(coloredResult);
+            }
+        }
         #endregion
 
         #region Geometric transformations
