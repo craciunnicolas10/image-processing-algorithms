@@ -1149,6 +1149,62 @@ namespace Framework.ViewModel
         #endregion
 
         #region Geometric transformations
+        private ICommand _scaleImageCommand;
+        public ICommand ScaleImageCommand
+        {
+            get
+            {
+                if (_scaleImageCommand == null)
+                {
+                    _scaleImageCommand = new RelayCommand(ScaleImage);
+                }
+                return _scaleImageCommand;
+            }
+        }
+
+        private void ScaleImage(object parameter)
+        {
+            if (InitialImage == null)
+            {
+                MessageBox.Show("Please add an image!");
+                return;
+            }
+
+            ClearProcessedCanvas(parameter as Canvas);
+
+            List<string> labels = new List<string>
+            {
+                "Scale X (sx):",
+                "Scale Y (sy):"
+            };
+
+            DialogWindow diag = new DialogWindow(_mainVM, labels);
+            diag.ShowDialog();
+
+            List<double> values = diag.GetValues();
+
+            if (values == null || values.Count < 2) return;
+
+            double sx = values[0];
+            double sy = values[1];
+
+            if (sx <= 0 || sy <= 0)
+            {
+                MessageBox.Show("Scale factors must be strictly positive!");
+                return;
+            }
+
+            if (GrayInitialImage != null)
+            {
+                GrayProcessedImage = Algorithms.Sections.GeometricTransformations.ScaleGrayscale(GrayInitialImage, sx, sy);
+                ProcessedImage = Convert(GrayProcessedImage);
+            }
+            else if (ColorInitialImage != null)
+            {
+                ColorProcessedImage = Algorithms.Sections.GeometricTransformations.ScaleColor(ColorInitialImage, sx, sy);
+                ProcessedImage = Convert(ColorProcessedImage);
+            }
+        }
         #endregion
 
         #region Segmentation
