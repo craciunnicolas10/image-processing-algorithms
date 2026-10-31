@@ -34,16 +34,19 @@ namespace Algorithms.Sections
                     int x0 = (int)Math.Floor(xc);
                     int y0 = (int)Math.Floor(yc);
 
-                    if (x0 >= 0 && x0 < inputImage.Width - 1 && y0 >= 0 && y0 < inputImage.Height - 1)
+                    if (x0 >= 0 && x0 < inputImage.Width && y0 >= 0 && y0 < inputImage.Height)
                     {
+                        // On the last row/column there is no right/bottom neighbour, so reuse the edge pixel
+                        int x1 = Math.Min(x0 + 1, inputImage.Width - 1);
+                        int y1 = Math.Min(y0 + 1, inputImage.Height - 1);
                         double fracX = xc - x0;
                         double fracY = yc - y0;
 
                         double[] f = new double[4];
                         f[0] = inputImage.Data[y0, x0, 0];
-                        f[1] = inputImage.Data[y0, x0 + 1, 0];
-                        f[2] = inputImage.Data[y0 + 1, x0, 0];
-                        f[3] = inputImage.Data[y0 + 1, x0 + 1, 0];
+                        f[1] = inputImage.Data[y0, x1, 0];
+                        f[2] = inputImage.Data[y1, x0, 0];
+                        f[3] = inputImage.Data[y1, x1, 0];
 
                         double val = BilinearInterpolation(fracX, fracY, f);
                         result.Data[yPrime, xPrime, 0] = (byte)(val + 0.5);
@@ -70,8 +73,11 @@ namespace Algorithms.Sections
                     int x0 = (int)Math.Floor(xc);
                     int y0 = (int)Math.Floor(yc);
 
-                    if (x0 >= 0 && x0 < inputImage.Width - 1 && y0 >= 0 && y0 < inputImage.Height - 1)
+                    if (x0 >= 0 && x0 < inputImage.Width && y0 >= 0 && y0 < inputImage.Height)
                     {
+                        // On the last row/column there is no right/bottom neighbour, so reuse the edge pixel
+                        int x1 = Math.Min(x0 + 1, inputImage.Width - 1);
+                        int y1 = Math.Min(y0 + 1, inputImage.Height - 1);
                         double fracX = xc - x0;
                         double fracY = yc - y0;
 
@@ -79,9 +85,9 @@ namespace Algorithms.Sections
                         {
                             double[] f = new double[4];
                             f[0] = inputImage.Data[y0, x0, c];
-                            f[1] = inputImage.Data[y0, x0 + 1, c];
-                            f[2] = inputImage.Data[y0 + 1, x0, c];
-                            f[3] = inputImage.Data[y0 + 1, x0 + 1, c];
+                            f[1] = inputImage.Data[y0, x1, c];
+                            f[2] = inputImage.Data[y1, x0, c];
+                            f[3] = inputImage.Data[y1, x1, c];
 
                             double val = BilinearInterpolation(fracX, fracY, f);
                             result.Data[yPrime, xPrime, c] = (byte)(val + 0.5);

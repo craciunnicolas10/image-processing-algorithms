@@ -37,48 +37,29 @@ namespace Algorithms.Sections
             return result;
         }
         #region BrightnessContrast
-        public static Image<Gray, byte> BrightnessContrast(Image<Gray, byte> inputImage,double a,double b)
+        public static byte[] ComputeBrightnessContrastLUT(double a, double b)
         {
-            Image<Gray, byte> result = new Image<Gray, byte>(inputImage.Size);
-            byte[]lut=new byte[256];
-            int i = 0;
-            for( ;i<(255-b)/a;i++)
+            byte[] lut = new byte[256];
+            for (int i = 0; i < 256; i++)
             {
                 double value = a * i + b + 0.5;
                 if (value < 0) value = 0;
-                if(value>255) value = 255;
-                lut[i] = (byte)(value);
+                if (value > 255) value = 255;
+                lut[i] = (byte)value;
             }
-            for (; i < 256; i++)
-                lut[i] = 255;
-            result = ApplyLUT(inputImage, lut);
-            return result;
+            return lut;
         }
 
-
-        public static Image<Bgr, byte> BrightnessContrast(Image<Bgr, byte> inputImage,double a,double b)
+        public static Image<Gray, byte> BrightnessContrast(Image<Gray, byte> inputImage, double a, double b)
         {
-            Image<Bgr, byte> result = new Image<Bgr, byte>(inputImage.Size);
+            byte[] lut = ComputeBrightnessContrastLUT(a, b);
+            return ApplyLUT(inputImage, lut);
+        }
 
-            for (int y = 0; y < inputImage.Height; ++y)
-            {
-                for (int x = 0; x < inputImage.Width; ++x)
-                {
-                    byte[] lut = new byte[256];
-                    int i = 0;
-                    for (; i < (255 - b) / a; i++)
-                    {
-                        double value = a * i + b + 0.5;
-                        if (value < 0) value = 0;
-                        if (value > 255) value = 255;
-                        lut[i] = (byte)(value);
-                    }
-                    for (; i < 256; i++)
-                        lut[i] = 255;
-                    result = ApplyLUTColor(inputImage, lut);
-                }
-            }
-            return result;
+        public static Image<Bgr, byte> BrightnessContrast(Image<Bgr, byte> inputImage, double a, double b)
+        {
+            byte[] lut = ComputeBrightnessContrastLUT(a, b);
+            return ApplyLUTColor(inputImage, lut);
         }
         #endregion
 

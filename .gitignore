@@ -1,5 +1,11 @@
-/.vs
-/Debug
-/Release
-Framework/obj
-Algorithms/obj
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build output (recreated on every build)
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+packages/

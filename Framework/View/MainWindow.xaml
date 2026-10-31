@@ -213,7 +213,7 @@
                       Foreground="{Binding Path=Theme.MenuItemForegroundColor}">
                 <MenuItem Header="Custom filters"
                           Foreground="#1E1E1E">
-                    <MenuItem Header="Filtrul meu"
+                    <MenuItem Header="Weighted mean (3x3)"
                               Foreground="#1E1E1E"
                               Command="{Binding Path=MenuCommands.CustomFilterCommand}"
                               CommandParameter="{Binding ElementName=processedImageCanvas}"/>

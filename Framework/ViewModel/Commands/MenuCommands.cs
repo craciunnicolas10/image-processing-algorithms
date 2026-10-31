@@ -817,8 +817,8 @@ namespace Framework.ViewModel
             ClearProcessedCanvas(parameter as Canvas);
             List<string> labels = new List<string>()
             {
-                "a:",
-                "b"
+                "Contrast (a):",
+                "Brightness (b):"
             };
             DialogWindow window=new DialogWindow(_mainVM, labels);
             window.ShowDialog();
@@ -834,7 +834,7 @@ namespace Framework.ViewModel
             }
             else if (ColorInitialImage != null)
             {
-                ColorProcessedImage = PointwiseOperations.BrightnessContrast(ColorProcessedImage, a,b);
+                ColorProcessedImage = PointwiseOperations.BrightnessContrast(ColorInitialImage, a, b);
                 ProcessedImage = Convert(ColorProcessedImage);
             }
         }

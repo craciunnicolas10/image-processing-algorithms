@@ -70,7 +70,7 @@ namespace Algorithms.Tools
                 {
                     if (inputImage.Data[y, x, 0] >= T)
                         result.Data[y, x, 0] = 255;
-                    else//redundant imaginea are pixelii negri impliciti
+                    else // redundant: a new image is already black
                         result.Data[y, x, 0] = 0;
                 }
             }
